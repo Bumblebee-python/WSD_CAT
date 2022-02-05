@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style type="text/css">  
+        body{  
+            font-family: Calibri;  
+        }  
+        input[type="text"] {  
+            width: 250px;  
+        }  
+        input[type="submit"], input[type="reset"] {  
+            width: 77px;  
+            height: 27px;  
+            position: relative;left: 180px;  
+        }  
+        form{  
+            text-align: center;  
+            font-family: Calibri;  
+            font-size: 20px;  
+            border: 3px solid black;  
+            width: 75%;  
+            margin: 20px auto;  
+        }  
+        td {  
+            padding: 10px;  
+        }  
+        td:first-child {  
+            text-align: right;  
+            font-weight: bold;  
+        }  
+        td:last-child {  
+            text-align: left;  }
+      
+    </style>
+</head>
+<body onload="document.registration.userid.focus();">
+    <header class="text-gray-600 body-font" style="
+    background-color: darkgray;
+">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Gateways 2022    |</span>  <span class="ml-3 text-xl" style="
+            background-color: chartreuse;
+        ">TECHNOVID</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900">About</a>
+            <a class="mr-5 hover:text-gray-900">Contact Us</a>
+            <a class="mr-5 hover:text-gray-900">View Form</a>
+            
+          </nav>
+          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+              Profile
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+<div class="container">    
+    <hr>    
+    <form method="" action="" name="myForm" onsubmit="return validate()">    
+        <h2>Registration Form</h2>    
+        <table>   
+            <tr>    
+                <td><label>Username: </label></td>    
+                <td>    
+                    <input type="text" name="username" placeholder="username">    
+                </td>    
+            </tr>
+            <tr>    
+                <td><label>Password: </label></td>    
+                <td>    
+                    <input type="password" name="password" placeholder="password">    
+                </td>    
+            </tr>  
+            <tr>    
+                <td><label>Name: </label></td>    
+                <td>    
+                    <input type="text" name="name" placeholder="Name">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" placeholder="example@gmail.com">    
+                </td>    
+            </tr> 
+            <tr>    
+                <td><label>Course: </label></td>    
+                    <td>    
+                        <select name="course">    
+                            <option value="select course">select course</option>    
+                            <option value="HTML">HTML</option>    
+                            <option value="CSS">CSS</option>    
+                            <option value="JavaScript">JAVASCRIPT</option>    
+                            <option value="Java">JAVA</option>    
+                        </select>    
+                    </td>    
+                </tr> 
+            <tr>    
+                <td><label>College/University Name: </label></td>    
+                <td>    
+                    <input type="text" name="university" placeholder="College/University Name">    
+                </td>    
+            </tr> 
+            <tr>    
+                <td><label>State: </label></td>    
+                <td>    
+                    <input type="text" name="state" placeholder="Address">    
+                </td>    
+            </tr> 
+            <tr>    
+                <td><label>Address: </label></td>    
+                <td>    
+                    <input type="textarea" size="50" name="address" placeholder="Address">    
+                </td>    
+            </tr>   
+            <tr>    
+                <td><label>Age: </label></td>    
+                <td>    
+                    <input type="number" name="age" placeholder="Age">    
+                </td>    
+            </tr> 
+            <tr>    
+                <td><label>Mobile: </label></td>    
+                <td>    
+                    <input type="number" name="mobile" placeholder="Mobile">    
+                </td>    
+            </tr>
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" name="gender" value="male">Male    
+                    <input type="radio" name="gender" value="femele">Female    
+                </td>    
+            </tr> 
+             
+                   
+            <tr>    
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>
+</div>
+
+<script>
+function clearErrors() {
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+        }
+        function seterror(id, error) {
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+        }
+        function validateForm() {
+            var returnVal = true;
+            clearErrors();
+
+            var fname = document.forms['myForm']['name'].value;
+            if (name.length < 5) {
+                seterror("name", "*Length of name is too short");
+                returnVal = false;
+            }
+            var email = document.forms['myForm']['email'].value;
+            if (email.length > 30) {
+                seterror("email", "*Length of email is too long");
+                returnVal = false;
+            }
+            if (email.search(/([a-z0-9\.\-_]{5,25})@christuniversity.in$/) < 0) {
+                seterror("email", "*Domain name should only be christuniversity.in");
+                returnVal = false;
+            }
+            var phone = document.forms['myForm']['mobile'].value;
+            if (phone.length != 10) {
+                seterror("mobile", "*Length of phone should be 10");
+                returnVal = false;
+            }
+
+            var password = document.forms['myForm']['password'].value;
+            if (password.length < 8) {
+                seterror("password", "*Your password must be at least 8 characters");
+                returnVal = false;
+            }
+            if (password.search(/[a-z]/) < 0) {
+                seterror("password", "*Your password must contain at least one letter in lower case.");
+                returnVal = false;
+            }
+            if (password.search(/[A-Z]/) < 0) {
+                seterror("password", "*Your password must contain at least one letter in upper case.");
+                returnVal = false;
+            }
+            if (password.search(/[0-9]/) < 0) {
+                seterror("password", "*Your password must contain at least one digit.");
+                returnVal = false;
+            }
+            if (password.search(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/) < 0) {
+                seterror("password", "*Your password must contain at least one Special Character.");
+                returnVal = false;
+            }
+            var age = document.forms['myForms']['age'].value;
+            if (age.search(/[^-\d+$]/)) {
+                seterror("age", "*Age cannot be negative");
+                returnVal = false;
+            }
+            return returnVal;
+        }
+        function lockkb(event) {
+            let code = event.which;
+            if (code > 47 && code < 58)
+                return false;
+            else
+                return true;
+        }
+        function setUsername()
+        {
+            var value = document.getElementById("username").value;
+            
+                document.cookie="username="+value+";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+        }
+        function setEmail()
+        {
+            var value = document.getElementById("email").value;
+            
+                document.cookie="email="+value+";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+        }
+        function storeItems()
+        {
+            var myphone = document.getElementById("mobile").value;
+            localStorage.setItem("mobile",myphone);
+            var myemail = document.getElementById("email").value;
+            localStorage.setItem("email",myphone);
+        }
+        function loadXMLDoc() {
+            // XMLHttpRequest() - to load an XML documents (request data from the server)
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    studentDetails(this);
+                }
+            };
+            // registration.xml is the external xml file
+            xmlhttp.open("GET", "registration.xml", true);
+            xmlhttp.send();
+        }
+        function studentDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = 
+                `<tr>
+                    <th>Name</th>
+                    <th>University</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>`;
+                
+            var x = xmlDoc.getElementsByTagName("computer-science");
+            
+  
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("stu-name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("stu-university")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("stu-phone")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("stu-email")[0]
+                    .childNodes[0].nodeValue + "</td><td>";
+            }
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+</script>
+
+
+
+</body>
+</html>
